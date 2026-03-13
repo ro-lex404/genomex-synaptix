@@ -14,7 +14,7 @@ import pandas as pd
 import io
 import os
 import gzip
-import time # <--- Add this to your imports at the top
+import time 
 
 # --- NEW IMPORTS FOR DYNAMIC GENERATION ---
 import numpy as np
@@ -66,12 +66,14 @@ class UltimateGenomeXHybrid(nn.Module):
 device = torch.device("cpu")
 pytorch_model = None
 tabular_model = None
+rf_model = None # <-- Added Random Forest
 
 try:
     tabular_model = joblib.load("./models/genomex_catboost_final.pkl")
-    print("✅ Tabular Model loaded successfully!")
+    rf_model = joblib.load("./models/synaptix_RandomForest.pkl") # <-- Added Random Forest
+    print("✅ Tabular Models loaded successfully!")
 except Exception as e:
-    print(f"⚠️ Failed to load Tabular model: {e}")
+    print(f"⚠️ Failed to load Tabular models: {e}")
 
 try:
     pytorch_model = UltimateGenomeXHybrid().to(device)
@@ -205,13 +207,17 @@ async def analyze_file(file: UploadFile = File(...)):
             # Fetch tabular clues AND the Gene Symbol dynamically
             af, sift, cadd, nonsense, missense, synonymous, splice, gene_symbol = get_variant_clues(chrom, pos, alt)
             
-            # 1. Run the Tabular Model (Always works)
+            # 1. Run the Tabular Models (Always works)
             input_data = pd.DataFrame([[af, sift, cadd, nonsense, missense, synonymous, splice]], 
                                       columns=['gnomAD_AF', 'SIFT_Score', 'CADD_Score', 'Is_Nonsense', 'Is_Missense', 'Is_Synonymous', 'Is_Splice_Site'])
             
+            # CatBoost Prediction
             tabular_pred = tabular_model.predict(input_data)[0]
             tabular_prob = 0.95 if tabular_pred == 1 else 0.05 
             tabular_confidence = tabular_model.predict_proba(input_data)[0].max() * 100
+            
+            # Random Forest Prediction
+            rf_prob = rf_model.predict_proba(input_data)[0][1]
 
             # 2. Try the PyTorch GNN (With Dynamic Fallback!)
             pytorch_prob = None
@@ -245,7 +251,8 @@ async def analyze_file(file: UploadFile = File(...)):
 
             # 3. Ensemble Logic (Graceful Fallback)
             if pytorch_prob is not None:
-                final_probability = (pytorch_prob + tabular_prob) / 2
+                # 50% GNN, 20% CatBoost, 30% Random Forest
+                final_probability = (pytorch_prob * 0.50) + (tabular_prob * 0.20) + (rf_prob * 0.30)
                 classification = "Pathogenic" if final_probability >= 0.5 else "Benign"
                 final_confidence = final_probability * 100 if classification == "Pathogenic" else (1 - final_probability) * 100
             else:
