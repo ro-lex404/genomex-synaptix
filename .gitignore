@@ -1,4 +1,6 @@
-./frontend/node_modules
-.frontend/.*
-./__pycache__/*
-.venv
+frontend/node_modules/
+frontend/.next/
+__pycache__/
+*.pyc
+.venv/
+demo_temp_struct.pdb
