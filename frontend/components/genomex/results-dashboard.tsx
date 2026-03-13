@@ -22,7 +22,7 @@ export function ResultsDashboard({ aiResults }: { aiResults?: any[] }) {
     confidence: (result.confidence_score || result.confidence) / 100,
     features: result.features || { cadd_score: 0, sift_score: 0, gnomad_af: 0 }, 
     pytorch_confidence: result.pytorch_confidence || "N/A",
-    catboost_confidence: result.catboost_confidence || result.confidence || "N/A",
+    rf_confidence: result.rf_confidence || result.catboost_confidence || result.confidence || "N/A",
     ensemble_confidence: result.confidence_score || result.confidence || 96.2
   })) : []
 
@@ -33,7 +33,7 @@ export function ResultsDashboard({ aiResults }: { aiResults?: any[] }) {
         features: { cadd_score: 28.5, sift_score: 0.05 },
         ensemble_confidence: 96.2,
         pytorch_confidence: 94,
-        catboost_confidence: 98
+        rf_confidence: 98
       }
 
   const pathogenicCount = liveVariants.filter((v) => v.classification === "Pathogenic").length
@@ -51,17 +51,17 @@ export function ResultsDashboard({ aiResults }: { aiResults?: any[] }) {
     const dateStr = new Date().toISOString().split('T')[0]
 
     // ==========================================
-    // 1. GENERATE CSV (Keeping your exact logic)
+    // 1. GENERATE CSV
     // ==========================================
     const headers = [
       "Variant ID", "Gene Symbol", "Final Classification",
       "Ensemble Confidence (%)", "GNN Confidence (%)",
-      "CatBoost Confidence (%)", "CADD Score", "SIFT Score", "gnomAD Allele Frequency"
+      "Random Forest Confidence (%)", "CADD Score", "SIFT Score", "gnomAD Allele Frequency"
     ]
 
     const csvRows = liveVariants.map(v => [
       v.id, v.gene, v.classification, (v.ensemble_confidence).toFixed(2),
-      v.pytorch_confidence, v.catboost_confidence,
+      v.pytorch_confidence, v.rf_confidence,
       v.features.cadd_score, v.features.sift_score, v.features.gnomad_af
     ])
 
@@ -159,7 +159,7 @@ export function ResultsDashboard({ aiResults }: { aiResults?: any[] }) {
               Analysis Results
             </h1>
             <p className="mt-1 text-muted-foreground">
-              Processed via Multi-Modal Hybrid AI (GNN + BiLSTM + CatBoost)
+              Processed via 60/40 Hybrid AI (PyTorch GNN + Random Forest)
             </p>
           </div>
           <Button className="gap-2" onClick={handleDownloadReport}>
@@ -300,14 +300,14 @@ export function ResultsDashboard({ aiResults }: { aiResults?: any[] }) {
           <p className="text-sm font-semibold text-muted-foreground mb-4">Model Agreement (Selected Variant)</p>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg bg-card/50 p-4 border border-border">
-              <p className="text-sm text-muted-foreground">Deep Spatial GNN</p>
+              <p className="text-sm text-muted-foreground">Deep Spatial GNN (60%)</p>
               <p className="text-2xl font-bold text-primary mt-2">
                 {activeVariant.pytorch_confidence}{activeVariant.pytorch_confidence !== "N/A" ? "%" : ""}
               </p>
             </div>
             <div className="rounded-lg bg-card/50 p-4 border border-border">
-              <p className="text-sm text-muted-foreground">CatBoost Clinical Heuristics</p>
-              <p className="text-2xl font-bold text-destructive mt-2">{activeVariant.catboost_confidence}%</p>
+              <p className="text-sm text-muted-foreground">Random Forest Heuristics (40%)</p>
+              <p className="text-2xl font-bold text-destructive mt-2">{activeVariant.rf_confidence}%</p>
             </div>
           </div>
         </motion.div>
@@ -336,14 +336,6 @@ export function ResultsDashboard({ aiResults }: { aiResults?: any[] }) {
           </div>
           <div className="p-6 bg-black">
             
-            {/* <iframe
-              title="Protein Interactive Diagram"
-              src={`http://127.0.0.1:8000/render_3d/${activeVariant.gene}/${encodeURIComponent(activeVariant.id)}`}
-              width="100%"
-              height="500"
-              className="border-0 rounded-md bg-black"
-            /> */}
-
             <iframe
               title="Protein Interactive Diagram"
               src={`https://kamilah-overgenerous-empirically.ngrok-free.dev/render_3d/${activeVariant.gene}/${encodeURIComponent(activeVariant.id)}`}

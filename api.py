@@ -252,7 +252,7 @@ async def analyze_file(file: UploadFile = File(...)):
             # 3. Ensemble Logic (Graceful Fallback)
             if pytorch_prob is not None:
                 # 50% GNN, 20% CatBoost, 30% Random Forest
-                final_probability = (pytorch_prob * 0.50) + (tabular_prob * 0.20) + (rf_prob * 0.30)
+                final_probability = (pytorch_prob * 0.60) + (tabular_prob * 0.20) + (rf_prob * 0.30)
                 classification = "Pathogenic" if final_probability >= 0.5 else "Benign"
                 final_confidence = final_probability * 100 if classification == "Pathogenic" else (1 - final_probability) * 100
             else:

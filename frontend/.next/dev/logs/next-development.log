@@ -33,3 +33,169 @@
 [00:03:31.529] Browser LOG     AI Predictions Received: {"results":[{"catboost_confidence":93.99,"classification":"Pathogenic","confidence_score":87.74,"features":{"cadd_score":38,"gnomad_af":0.000148,"sift_score":0.05},"gene_symbol":"EMC1","pytorch_confidence":80.48,"variant_id":"1:19230930:G:A"},{"catboost_confidence":85.33,"classification":"Pathogenic","confidence_score":75.54,"features":{"cadd_score":22.4,"gnomad_af":0.000028,"sift_score":0.01},"gene_symbol":"NF1","pytorch_confidence":56.08,"variant_id":"17:31229200:C:G"},{"catboost_confidence":99.85,"classification":"Pathogenic","confidence_score":89.77,"features":{"cadd_score":39,"gnomad_af":0.000005,"sift_score":0.05},"gene_symbol":"LRPPRC","pytorch_confidence":84.55,"variant_id":"2:43957445:G:T"},{"catboost_confidence":98.66,"classification":"Pathogenic","confidence_score":68.1,"features":{"cadd_score":33,"gnomad_af":0.000003,"sift_score":0},"gene_symbol":"SEMA4G","pytorch_confidence":41.2,"variant_id":"10:100989330:C:T"},{"catboost_confidence":99.22,"classification":"Pathogenic","confidence_score":84.6,"features":{"cadd_score":27.1,"gnomad_af":0,"sift_score":0},"gene_symbol":"NR0B1","pytorch_confidence":74.2,"variant_id":"X:30304652:A:G"},{"catboost_confidence":89.66,"classification":"Pathogenic","confidence_score":75.37,"features":{"cadd_score":13.68,"gnomad_af":0.000017,"sift_score":0.02},"gene_symbol":"CELSR1","pytorch_confidence":55.74,"variant_id":"22:46364712:G:A"},{"catboost_confidence":53.77,"classification":"Pathogenic","confidence_score":70.27,"features":{"cadd_score":16.86,"gnomad_af":0.000343,"sift_score":0.04},"gene_symbol":"RIPPLY1","pytorch_confidence":45.55,"variant_id":"X:106901501:G:A"},{"catboost_confidence":95.81,"classification":"Benign","confidence_score":78.18,"features":{"cadd_score":13.59,"gnomad_af":0.1399,"sift_score":0.04},"gene_symbol":"LAMC2","pytorch_confidence":38.64,"variant_id":"1:183232835:G:C"},{"catboost_confidence":86.69,"classification":"Pathogenic","confidence_score":58.72,"features":{"cadd_score":22.5,"gnomad_af":0.000003,"sift_score":0.04},"gene_symbol":"Y_RNA","pytorch_confidence":22.44,"variant_id":"X:53320678:G:A"},{"catboost_confidence":92.2,"classification":"Pathogenic","confidence_score":73.91,"features":{"cadd_score":21.4,"gnomad_af":0.000001,"sift_score":0.02},"gene_symbol":"BRCA1","pytorch_confidence":52.83,"variant_id":"17:43092896:C:T"}]}
 >>>>>>> ce64735f6cbade3d88499af935805151e40d1655
 [02:56:53.484] Server  LOG     ✓ Compiled in 4.8s
+[01:47:16.660] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[01:47:19.556] Browser ERROR   Inference failed: {}
+[01:47:24.108] Browser LOG     Sending CSV to AI for analysis
+[01:47:44.240] Browser LOG     AI Predictions Received: {"results":[{"catboost_confidence":93.99,"classification":"Pathogenic","confidence_score":87.44,"features":{"cadd_score":38,"gnomad_af":0.000148,"sift_score":0.05},"gene_symbol":"EMC1","pytorch_confidence":80.48,"variant_id":"1:19230930:G:A"},{"catboost_confidence":85.33,"classification":"Pathogenic","confidence_score":50.64,"features":{"cadd_score":22.4,"gnomad_af":0.000028,"sift_score":0.01},"gene_symbol":"NF1","pytorch_confidence":56.08,"variant_id":"17:31229200:C:G"},{"catboost_confidence":99.85,"classification":"Pathogenic","confidence_score":91.27,"features":{"cadd_score":39,"gnomad_af":0.000005,"sift_score":0.05},"gene_symbol":"LRPPRC","pytorch_confidence":84.55,"variant_id":"2:43957445:G:T"},{"catboost_confidence":98.66,"classification":"Pathogenic","confidence_score":69.6,"features":{"cadd_score":33,"gnomad_af":0.000003,"sift_score":0},"gene_symbol":"SEMA4G","pytorch_confidence":41.2,"variant_id":"10:100989330:C:T"},{"catboost_confidence":99.22,"classification":"Pathogenic","confidence_score":86.1,"features":{"cadd_score":27.1,"gnomad_af":0,"sift_score":0},"gene_symbol":"NR0B1","pytorch_confidence":74.2,"variant_id":"X:30304652:A:G"},{"catboost_confidence":89.66,"classification":"Pathogenic","confidence_score":54.37,"features":{"cadd_score":13.68,"gnomad_af":0.000017,"sift_score":0.02},"gene_symbol":"CELSR1","pytorch_confidence":55.74,"variant_id":"22:46364712:G:A"},{"catboost_confidence":53.77,"classification":"Benign","confidence_score":58.23,"features":{"cadd_score":16.86,"gnomad_af":0.000343,"sift_score":0.04},"gene_symbol":"RIPPLY1","pytorch_confidence":45.55,"variant_id":"X:106901501:G:A"},{"catboost_confidence":95.81,"classification":"Benign","confidence_score":79.68,"features":{"cadd_score":13.59,"gnomad_af":0.1399,"sift_score":0.04},"gene_symbol":"LAMC2","pytorch_confidence":38.64,"variant_id":"1:183232835:G:C"},{"catboost_confidence":86.69,"classification":"Benign","confidence_score":60.18,"features":{"cadd_score":22.5,"gnomad_af":0.000003,"sift_score":0.04},"gene_symbol":"Y_RNA","pytorch_confidence":22.44,"variant_id":"X:53320678:G:A"},{"catboost_confidence":92.2,"classification":"Pathogenic","confidence_score":60.41,"features":{"cadd_score":21.4,"gnomad_af":0.000001,"sift_score":0.02},"gene_symbol":"BRCA1","pytorch_confidence":52.83,"variant_id":"17:43092896:C:T"}]}
+[02:10:02.237] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:10:02.438] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[02:10:02.438] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:10:02.438] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[02:10:02.438] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1773427462670} /_vercel/insights/view
+[02:10:08.665] Browser LOG     Sending CSV to AI for analysis
+[02:10:28.497] Browser LOG     AI Predictions Received: {"results":[{"catboost_confidence":93.99,"classification":"Pathogenic","confidence_score":86.04,"features":{"cadd_score":38,"gnomad_af":0.000148,"sift_score":0.05},"gene_symbol":"EMC1","pytorch_confidence":80.48,"variant_id":"1:19230930:G:A"},{"catboost_confidence":85.33,"classification":"Pathogenic","confidence_score":50.9,"features":{"cadd_score":22.4,"gnomad_af":0.000028,"sift_score":0.01},"gene_symbol":"NF1","pytorch_confidence":56.08,"variant_id":"17:31229200:C:G"},{"catboost_confidence":99.85,"classification":"Pathogenic","confidence_score":89.98,"features":{"cadd_score":39,"gnomad_af":0.000005,"sift_score":0.05},"gene_symbol":"LRPPRC","pytorch_confidence":84.55,"variant_id":"2:43957445:G:T"},{"catboost_confidence":98.66,"classification":"Pathogenic","confidence_score":63.97,"features":{"cadd_score":33,"gnomad_af":0.000003,"sift_score":0},"gene_symbol":"SEMA4G","pytorch_confidence":41.2,"variant_id":"10:100989330:C:T"},{"catboost_confidence":99.22,"classification":"Pathogenic","confidence_score":83.77,"features":{"cadd_score":27.1,"gnomad_af":0,"sift_score":0},"gene_symbol":"NR0B1","pytorch_confidence":74.2,"variant_id":"X:30304652:A:G"},{"catboost_confidence":89.66,"classification":"Pathogenic","confidence_score":53.95,"features":{"cadd_score":13.68,"gnomad_af":0.000017,"sift_score":0.02},"gene_symbol":"CELSR1","pytorch_confidence":55.74,"variant_id":"22:46364712:G:A"},{"catboost_confidence":53.77,"classification":"Benign","confidence_score":58.42,"features":{"cadd_score":16.86,"gnomad_af":0.000343,"sift_score":0.04},"gene_symbol":"RIPPLY1","pytorch_confidence":45.55,"variant_id":"X:106901501:G:A"},{"catboost_confidence":95.81,"classification":"Benign","confidence_score":76.07,"features":{"cadd_score":13.59,"gnomad_af":0.1399,"sift_score":0.04},"gene_symbol":"LAMC2","pytorch_confidence":38.64,"variant_id":"1:183232835:G:C"},{"catboost_confidence":86.69,"classification":"Benign","confidence_score":64.29,"features":{"cadd_score":22.5,"gnomad_af":0.000003,"sift_score":0.04},"gene_symbol":"Y_RNA","pytorch_confidence":22.44,"variant_id":"X:53320678:G:A"},{"catboost_confidence":92.2,"classification":"Pathogenic","confidence_score":58.45,"features":{"cadd_score":21.4,"gnomad_af":0.000001,"sift_score":0.02},"gene_symbol":"BRCA1","pytorch_confidence":52.83,"variant_id":"17:43092896:C:T"}]}
+[02:12:35.822] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:12:35.988] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[02:12:35.988] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:12:35.988] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[02:12:35.988] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1773427616220} /_vercel/insights/view
+[02:12:43.358] Browser LOG     Sending CSV to AI for analysis
+[02:13:03.126] Browser LOG     AI Predictions Received: {"results":[{"catboost_confidence":93.99,"classification":"Pathogenic","confidence_score":85.89,"features":{"cadd_score":38,"gnomad_af":0.000148,"sift_score":0.05},"gene_symbol":"EMC1","pytorch_confidence":80.48,"variant_id":"1:19230930:G:A"},{"catboost_confidence":85.33,"classification":"Benign","confidence_score":61.55,"features":{"cadd_score":22.4,"gnomad_af":0.000028,"sift_score":0.01},"gene_symbol":"NF1","pytorch_confidence":56.08,"variant_id":"17:31229200:C:G"},{"catboost_confidence":99.85,"classification":"Pathogenic","confidence_score":90.73,"features":{"cadd_score":39,"gnomad_af":0.000005,"sift_score":0.05},"gene_symbol":"LRPPRC","pytorch_confidence":84.55,"variant_id":"2:43957445:G:T"},{"catboost_confidence":98.66,"classification":"Pathogenic","confidence_score":64.72,"features":{"cadd_score":33,"gnomad_af":0.000003,"sift_score":0},"gene_symbol":"SEMA4G","pytorch_confidence":41.2,"variant_id":"10:100989330:C:T"},{"catboost_confidence":99.22,"classification":"Pathogenic","confidence_score":84.52,"features":{"cadd_score":27.1,"gnomad_af":0,"sift_score":0},"gene_symbol":"NR0B1","pytorch_confidence":74.2,"variant_id":"X:30304652:A:G"},{"catboost_confidence":89.66,"classification":"Benign","confidence_score":56.55,"features":{"cadd_score":13.68,"gnomad_af":0.000017,"sift_score":0.02},"gene_symbol":"CELSR1","pytorch_confidence":55.74,"variant_id":"22:46364712:G:A"},{"catboost_confidence":53.77,"classification":"Benign","confidence_score":72.67,"features":{"cadd_score":16.86,"gnomad_af":0.000343,"sift_score":0.04},"gene_symbol":"RIPPLY1","pytorch_confidence":45.55,"variant_id":"X:106901501:G:A"},{"catboost_confidence":95.81,"classification":"Benign","confidence_score":76.82,"features":{"cadd_score":13.59,"gnomad_af":0.1399,"sift_score":0.04},"gene_symbol":"LAMC2","pytorch_confidence":38.64,"variant_id":"1:183232835:G:C"},{"catboost_confidence":86.69,"classification":"Benign","confidence_score":73.74,"features":{"cadd_score":22.5,"gnomad_af":0.000003,"sift_score":0.04},"gene_symbol":"Y_RNA","pytorch_confidence":22.44,"variant_id":"X:53320678:G:A"},{"catboost_confidence":92.2,"classification":"Pathogenic","confidence_score":51.7,"features":{"cadd_score":21.4,"gnomad_af":0.000001,"sift_score":0.02},"gene_symbol":"BRCA1","pytorch_confidence":52.83,"variant_id":"17:43092896:C:T"}]}
+[02:24:02.893] Server  LOG     ✓ Compiled in 530ms
+[02:24:26.290] Server  LOG     ✓ Compiled in 122ms
+[02:24:27.238] Browser ERROR   ./components/genomex/results-dashboard.tsx:293:21
+Parsing ecmascript source code failed
+  291 |                   </motion.tr>
+  292 |                 ))}
+> 293 |             </table>
+      |                     ^
+> 294 |           </div>
+      | ^^^^^^^^^^^
+  295 |         </motion.div>
+  296 |
+  297 |         {/* DYNAMIC: Model Agreement Section */}
+
+Expected '</', got 'jsx text'
+
+Import traces:
+  Client Component Browser:
+    ./components/genomex/results-dashboard.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/genomex/results-dashboard.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[02:24:31.364] Browser ERROR   ./components/genomex/results-dashboard.tsx:310:20
+Parsing ecmascript source code failed
+  308 |           </div>
+  309 |         </motion.div>
+> 310 |       </motion.div>
+      |                    ^
+> 311 |
+      | ^
+> 312 |       {/* Clinical Evidence Section - 2 Columns */}
+      | ^^^^^^^
+  313 |       <motion.div variants={itemVariants} className="grid gap-8 lg:grid-cols-5 mt-8">
+  314 |         
+  315 |         {/* Left Column - 3D Spatial Collapse (Hardcoded) */}
+
+Expected '</', got 'jsx text'
+
+Import traces:
+  Client Component Browser:
+    ./components/genomex/results-dashboard.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/genomex/results-dashboard.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[02:24:33.892] Server  LOG     ✓ Compiled in 50ms
+[02:24:35.025] Server  LOG     ✓ Compiled in 44ms
+[02:24:38.478] Server  LOG     ✓ Compiled in 42ms
+[02:24:41.693] Server  LOG     ✓ Compiled in 41ms
+[02:24:44.126] Server  LOG     ✓ Compiled in 40ms
+[02:24:45.150] Browser ERROR   ./components/genomex/results-dashboard.tsx:1:9
+Parsing ecmascript source code failed
+> 1 |         </motion.div>
+    |         ^
+  2 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./components/genomex/results-dashboard.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/genomex/results-dashboard.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[02:24:45.150] Browser ERROR   ./components/genomex/results-dashboard.tsx:1:10
+Parsing ecmascript source code failed
+> 1 |         </motion.div>
+    |          ^^^^^^^^^^^^
+  2 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./components/genomex/results-dashboard.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/genomex/results-dashboard.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[02:24:45.946] Server  LOG     ✓ Compiled in 252ms
+[02:24:46.660] Browser ERROR   ./app/page.tsx:12:1
+Export ResultsDashboard doesn't exist in target module
+  10 | import { InfoSections } from "@/components/genomex/info-sections"
+  11 | import { LoadingSpinner } from "@/components/genomex/loading-spinner"
+> 12 | import { ResultsDashboard } from "@/components/genomex/results-dashboard"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | type ViewState = "home" | "loading" | "results"
+  15 |
+
+The export ResultsDashboard was not found in module [project]/components/genomex/results-dashboard.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[02:24:46.660] Browser ERROR   ./app/page.tsx:12:1
+Export ResultsDashboard doesn't exist in target module
+  10 | import { InfoSections } from "@/components/genomex/info-sections"
+  11 | import { LoadingSpinner } from "@/components/genomex/loading-spinner"
+> 12 | import { ResultsDashboard } from "@/components/genomex/results-dashboard"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | type ViewState = "home" | "loading" | "results"
+  15 |
+
+The export ResultsDashboard was not found in module [project]/components/genomex/results-dashboard.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[02:24:49.704] Server  LOG     ✓ Compiled in 143ms
+[02:25:00.770] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[02:25:03.760] Browser ERROR   Inference failed: {}
+[02:25:18.540] Browser LOG     Sending CSV to AI for analysis
+[02:25:37.518] Browser LOG     AI Predictions Received: {"results":[{"catboost_confidence":93.99,"classification":"Pathogenic","confidence_score":85.89,"features":{"cadd_score":38,"gnomad_af":0.000148,"sift_score":0.05},"gene_symbol":"EMC1","pytorch_confidence":80.48,"variant_id":"1:19230930:G:A"},{"catboost_confidence":85.33,"classification":"Benign","confidence_score":61.55,"features":{"cadd_score":22.4,"gnomad_af":0.000028,"sift_score":0.01},"gene_symbol":"NF1","pytorch_confidence":56.08,"variant_id":"17:31229200:C:G"},{"catboost_confidence":99.85,"classification":"Pathogenic","confidence_score":90.73,"features":{"cadd_score":39,"gnomad_af":0.000005,"sift_score":0.05},"gene_symbol":"LRPPRC","pytorch_confidence":84.55,"variant_id":"2:43957445:G:T"},{"catboost_confidence":98.66,"classification":"Pathogenic","confidence_score":64.72,"features":{"cadd_score":33,"gnomad_af":0.000003,"sift_score":0},"gene_symbol":"SEMA4G","pytorch_confidence":41.2,"variant_id":"10:100989330:C:T"},{"catboost_confidence":99.22,"classification":"Pathogenic","confidence_score":84.52,"features":{"cadd_score":27.1,"gnomad_af":0,"sift_score":0},"gene_symbol":"NR0B1","pytorch_confidence":74.2,"variant_id":"X:30304652:A:G"},{"catboost_confidence":89.66,"classification":"Benign","confidence_score":56.55,"features":{"cadd_score":13.68,"gnomad_af":0.000017,"sift_score":0.02},"gene_symbol":"CELSR1","pytorch_confidence":55.74,"variant_id":"22:46364712:G:A"},{"catboost_confidence":53.77,"classification":"Benign","confidence_score":72.67,"features":{"cadd_score":16.86,"gnomad_af":0.000343,"sift_score":0.04},"gene_symbol":"RIPPLY1","pytorch_confidence":45.55,"variant_id":"X:106901501:G:A"},{"catboost_confidence":95.81,"classification":"Benign","confidence_score":76.82,"features":{"cadd_score":13.59,"gnomad_af":0.1399,"sift_score":0.04},"gene_symbol":"LAMC2","pytorch_confidence":38.64,"variant_id":"1:183232835:G:C"},{"catboost_confidence":86.69,"classification":"Benign","confidence_score":73.74,"features":{"cadd_score":22.5,"gnomad_af":0.000003,"sift_score":0.04},"gene_symbol":"Y_RNA","pytorch_confidence":22.44,"variant_id":"X:53320678:G:A"},{"catboost_confidence":92.2,"classification":"Pathogenic","confidence_score":51.7,"features":{"cadd_score":21.4,"gnomad_af":0.000001,"sift_score":0.02},"gene_symbol":"BRCA1","pytorch_confidence":52.83,"variant_id":"17:43092896:C:T"}]}
+[02:26:42.222] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[02:26:44.907] Browser ERROR   Inference failed: {}
+[02:26:50.598] Browser LOG     Sending CSV to AI for analysis
+[02:28:42.593] Browser LOG     AI Predictions Received: {"results":[{"catboost_confidence":81.48,"classification":"Data Insufficient","confidence_score":81.48,"features":{"cadd_score":0,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"Unknown","pytorch_confidence":"N/A","variant_id":"1:66926:AG:A"},{"catboost_confidence":57.97,"classification":"Benign","confidence_score":90.15,"features":{"cadd_score":16.64,"gnomad_af":0.004355,"sift_score":0.05},"gene_symbol":"OR4F5","pytorch_confidence":16.42,"variant_id":"1:69134:A:G"},{"catboost_confidence":88.85,"classification":"Benign","confidence_score":60.07,"features":{"cadd_score":24,"gnomad_af":0.000003,"sift_score":0},"gene_symbol":"OR4F5","pytorch_confidence":25.89,"variant_id":"1:69241:C:T"},{"catboost_confidence":91.28,"classification":"Benign","confidence_score":75.6,"features":{"cadd_score":18.76,"gnomad_af":0,"sift_score":0.02},"gene_symbol":"OR4F5","pytorch_confidence":18.67,"variant_id":"1:69308:A:G"},{"catboost_confidence":94.94,"classification":"Pathogenic","confidence_score":52.71,"features":{"cadd_score":22.7,"gnomad_af":0,"sift_score":0},"gene_symbol":"OR4F5","pytorch_confidence":23.18,"variant_id":"1:69314:T:G"},{"catboost_confidence":86.46,"classification":"Benign","confidence_score":74.02,"features":{"cadd_score":19.11,"gnomad_af":0.000013,"sift_score":0},"gene_symbol":"OR4F5","pytorch_confidence":19.3,"variant_id":"1:69404:T:C"},{"catboost_confidence":97.42,"classification":"Pathogenic","confidence_score":55.86,"features":{"cadd_score":24.3,"gnomad_af":0,"sift_score":0},"gene_symbol":"OR4F5","pytorch_confidence":26.44,"variant_id":"1:69423:G:A"},{"catboost_confidence":78.62,"classification":"Benign","confidence_score":88.36,"features":{"cadd_score":5.97,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"OR4F5","pytorch_confidence":13.4,"variant_id":"1:69506:C:G"},{"catboost_confidence":92.51,"classification":"Benign","confidence_score":55.35,"features":{"cadd_score":23.5,"gnomad_af":0.000004,"sift_score":0},"gene_symbol":"OR4F5","pytorch_confidence":24.86,"variant_id":"1:69581:C:G"},{"catboost_confidence":82.57,"classification":"Benign","confidence_score":77.94,"features":{"cadd_score":19.39,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"OR4F5","pytorch_confidence":18.77,"variant_id":"1:69623:T:C"},{"catboost_confidence":91.95,"classification":"Benign","confidence_score":66.18,"features":{"cadd_score":22.1,"gnomad_af":0.000008,"sift_score":0},"gene_symbol":"OR4F5","pytorch_confidence":22.37,"variant_id":"1:69655:G:C"},{"catboost_confidence":85.16,"classification":"Benign","confidence_score":82.55,"features":{"cadd_score":16.35,"gnomad_af":0.000013,"sift_score":0.05},"gene_symbol":"OR4F5","pytorch_confidence":16.42,"variant_id":"1:69682:G:A"},{"catboost_confidence":90.88,"classification":"Benign","confidence_score":72.74,"features":{"cadd_score":22.9,"gnomad_af":0.000007,"sift_score":0.01},"gene_symbol":"OR4F5","pytorch_confidence":23.43,"variant_id":"1:69731:T:C"},{"catboost_confidence":90.94,"classification":"Benign","confidence_score":51.42,"features":{"cadd_score":17.27,"gnomad_af":0,"sift_score":0.01},"gene_symbol":"OR4F5","pytorch_confidence":17.64,"variant_id":"1:69769:T:C"},{"catboost_confidence":82.13,"classification":"Benign","confidence_score":81.75,"features":{"cadd_score":7.69,"gnomad_af":0.000021,"sift_score":0.05},"gene_symbol":"OR4F5","pytorch_confidence":13.74,"variant_id":"1:69956:C:T"},{"catboost_confidence":89.09,"classification":"Benign","confidence_score":80.55,"features":{"cadd_score":14.24,"gnomad_af":0.000009,"sift_score":0.02},"gene_symbol":"OR4F5","pytorch_confidence":15.76,"variant_id":"1:69989:A:C"},{"catboost_confidence":62.5,"classification":"Benign","confidence_score":91.31,"features":{"cadd_score":11.08,"gnomad_af":0.001579,"sift_score":0.05},"gene_symbol":"OR4F5","pytorch_confidence":14.49,"variant_id":"1:69995:G:C"},{"catboost_confidence":81.54,"classification":"Benign","confidence_score":90.4,"features":{"cadd_score":3.09,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"CICP27","pytorch_confidence":13.33,"variant_id":"1:139320:C:G"},{"catboost_confidence":76.76,"classification":"Benign","confidence_score":76.76,"features":{"cadd_score":1.22,"gnomad_af":0.003361,"sift_score":0.05},"gene_symbol":"Unknown","pytorch_confidence":"N/A","variant_id":"1:139847:C:G"},{"catboost_confidence":81.48,"classification":"Data Insufficient","confidence_score":81.48,"features":{"cadd_score":0,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"Unknown","pytorch_confidence":"N/A","variant_id":"1:766399:GAATA:G"},{"catboost_confidence":99.44,"classification":"Benign","confidence_score":92.85,"features":{"cadd_score":0.74,"gnomad_af":0.0565,"sift_score":0.05},"gene_symbol":"LINC01409","pytorch_confidence":11.92,"variant_id":"1:778062:T:C"},{"catboost_confidence":81.48,"classification":"Benign","confidence_score":90.78,"features":{"cadd_score":0,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"LINC01409","pytorch_confidence":12.81,"variant_id":"1:809284:T:TGGTCAATCA"},{"catboost_confidence":84.59,"classification":"Benign","confidence_score":91.09,"features":{"cadd_score":7.87,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"FAM87B","pytorch_confidence":14.84,"variant_id":"1:818683:G:T"},{"catboost_confidence":89.94,"classification":"Benign","confidence_score":91.69,"features":{"cadd_score":5.03,"gnomad_af":0.000469,"sift_score":0.05},"gene_symbol":"TUBB8P11","pytorch_confidence":13.84,"variant_id":"1:874050:C:A"},{"catboost_confidence":84.5,"classification":"Benign","confidence_score":92.22,"features":{"cadd_score":1.29,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"LINC02593","pytorch_confidence":12.96,"variant_id":"1:917750:G:A"},{"catboost_confidence":79.06,"classification":"Benign","confidence_score":91.97,"features":{"cadd_score":3.29,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"LINC02593","pytorch_confidence":13.38,"variant_id":"1:917837:G:A"},{"catboost_confidence":91.82,"classification":"Benign","confidence_score":93.03,"features":{"cadd_score":0.25,"gnomad_af":0.01667,"sift_score":0.05},"gene_symbol":"LINC02593","pytorch_confidence":11.61,"variant_id":"1:917887:G:T"},{"catboost_confidence":87.14,"classification":"Benign","confidence_score":88.55,"features":{"cadd_score":9.57,"gnomad_af":0.000013,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":17.08,"variant_id":"1:924518:G:C"},{"catboost_confidence":98.28,"classification":"Pathogenic","confidence_score":63.17,"features":{"cadd_score":32,"gnomad_af":0.000003,"sift_score":0},"gene_symbol":"SAMD11","pytorch_confidence":39.28,"variant_id":"1:925946:C:G"},{"catboost_confidence":98.61,"classification":"Pathogenic","confidence_score":64.72,"features":{"cadd_score":33,"gnomad_af":0.000005,"sift_score":0},"gene_symbol":"SAMD11","pytorch_confidence":41.2,"variant_id":"1:925952:G:A"},{"catboost_confidence":86.55,"classification":"Benign","confidence_score":88.84,"features":{"cadd_score":10.16,"gnomad_af":0.000006,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":17.26,"variant_id":"1:925956:C:T"},{"catboost_confidence":95.56,"classification":"Pathogenic","confidence_score":55.92,"features":{"cadd_score":27.5,"gnomad_af":0.00001,"sift_score":0},"gene_symbol":"SAMD11","pytorch_confidence":31.19,"variant_id":"1:925961:A:T"},{"catboost_confidence":87.07,"classification":"Benign","confidence_score":51.59,"features":{"cadd_score":31,"gnomad_af":0.000139,"sift_score":0},"gene_symbol":"SAMD11","pytorch_confidence":37.35,"variant_id":"1:925969:C:T"},{"catboost_confidence":93.26,"classification":"Benign","confidence_score":67.57,"features":{"cadd_score":25.7,"gnomad_af":0.000011,"sift_score":0},"gene_symbol":"SAMD11","pytorch_confidence":28.55,"variant_id":"1:925976:T:C"},{"catboost_confidence":84.24,"classification":"Benign","confidence_score":82.02,"features":{"cadd_score":15.45,"gnomad_af":0.000003,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":19.18,"variant_id":"1:925980:C:T"},{"catboost_confidence":91.1,"classification":"Benign","confidence_score":87.54,"features":{"cadd_score":8.76,"gnomad_af":0.000002,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":16.76,"variant_id":"1:925986:C:T"},{"catboost_confidence":98.28,"classification":"Pathogenic","confidence_score":63.17,"features":{"cadd_score":32,"gnomad_af":0.000003,"sift_score":0},"gene_symbol":"SAMD11","pytorch_confidence":39.28,"variant_id":"1:926003:C:T"},{"catboost_confidence":93.94,"classification":"Benign","confidence_score":90.69,"features":{"cadd_score":1.74,"gnomad_af":0.000001,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":14.84,"variant_id":"1:926010:G:T"},{"catboost_confidence":99.95,"classification":"Pathogenic","confidence_score":65.74,"features":{"cadd_score":35,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":42.91,"variant_id":"1:926014:G:A"},{"catboost_confidence":87.56,"classification":"Pathogenic","confidence_score":50.75,"features":{"cadd_score":22.4,"gnomad_af":0.000002,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":26.58,"variant_id":"1:926018:G:A"},{"catboost_confidence":78.87,"classification":"Benign","confidence_score":91.81,"features":{"cadd_score":4.31,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":13.65,"variant_id":"1:926022:C:G"},{"catboost_confidence":78.96,"classification":"Benign","confidence_score":80.81,"features":{"cadd_score":10.43,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":15.98,"variant_id":"1:926025:G:A"},{"catboost_confidence":77.73,"classification":"Benign","confidence_score":77.95,"features":{"cadd_score":7.62,"gnomad_af":0.000002,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":14.74,"variant_id":"1:926026:G:A"},{"catboost_confidence":80.95,"classification":"Benign","confidence_score":81.28,"features":{"cadd_score":7.11,"gnomad_af":0.000003,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":14.54,"variant_id":"1:926026:G:T"},{"catboost_confidence":79.25,"classification":"Benign","confidence_score":84.9,"features":{"cadd_score":2.44,"gnomad_af":0.000004,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":13.17,"variant_id":"1:926027:C:T"},{"catboost_confidence":71.73,"classification":"Benign","confidence_score":87.96,"features":{"cadd_score":3.38,"gnomad_af":0.00001,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":13.41,"variant_id":"1:926029:C:T"},{"catboost_confidence":81.48,"classification":"Data Insufficient","confidence_score":81.48,"features":{"cadd_score":0,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"Unknown","pytorch_confidence":"N/A","variant_id":"1:930081:AGCCCCACCTTCCTCTCCTCCT:A"},{"catboost_confidence":76.15,"classification":"Benign","confidence_score":85.08,"features":{"cadd_score":9.48,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":15.54,"variant_id":"1:930136:T:C"},{"catboost_confidence":81.48,"classification":"Data Insufficient","confidence_score":81.48,"features":{"cadd_score":0,"gnomad_af":0,"sift_score":0.05},"gene_symbol":"Unknown","pytorch_confidence":"N/A","variant_id":"1:930136:TCTC:T"},{"catboost_confidence":75.08,"classification":"Benign","confidence_score":89.15,"features":{"cadd_score":3.36,"gnomad_af":0.000013,"sift_score":0.05},"gene_symbol":"SAMD11","pytorch_confidence":12.75,"variant_id":"1:930139:C:T"}]}
+[02:33:45.405] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
