@@ -335,20 +335,23 @@ export function ResultsDashboard({ aiResults }: { aiResults?: any[] }) {
             </div>
           </div>
           <div className="p-6 bg-black">
+            
             {/* <iframe
-              title="Protein Interactive Diagram"
-              src="/interactive_protein.html"
-              width="100%"
-              height="500"
-              className="border-0 rounded-md"
-            /> */}
-            <iframe
               title="Protein Interactive Diagram"
               src={`http://127.0.0.1:8000/render_3d/${activeVariant.gene}/${encodeURIComponent(activeVariant.id)}`}
               width="100%"
               height="500"
               className="border-0 rounded-md bg-black"
+            /> */}
+
+            <iframe
+              title="Protein Interactive Diagram"
+              src={`https://kamilah-overgenerous-empirically.ngrok-free.dev/render_3d/${activeVariant.gene}/${encodeURIComponent(activeVariant.id)}`}
+              width="100%"
+              height="500"
+              className="border-0 rounded-md bg-black"
             />
+
           </div>
         </motion.div>
 

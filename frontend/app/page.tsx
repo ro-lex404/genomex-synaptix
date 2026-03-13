@@ -36,9 +36,16 @@ export default function GenomeXPage() {
       console.log("Sending CSV to AI for analysis")
 
       // 2. SEND TO YOUR PYTHON FASTAPI
-      const response = await fetch("http://127.0.0.1:8000/analyze_csv", {
+      // const response = await fetch("http://127.0.0.1:8000/analyze_csv", {
+      //   method: "POST",
+      //   body: formData
+      // })
+      const response = await fetch("https://kamilah-overgenerous-empirically.ngrok-free.dev/analyze_vcf", {
         method: "POST",
-        body: formData
+        headers: {
+          "ngrok-skip-browser-warning": "69420" // Crucial to bypass the free-tier warning page!
+        },
+        body: formData,
       })
 
       if (!response.ok) {
