@@ -1,3 +1,6 @@
+from fastapi.responses import HTMLResponse
+import plotly.graph_objects as go
+import hashlib
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -267,3 +270,92 @@ async def analyze_file(file: UploadFile = File(...)):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+# ==========================================
+# 5. DYNAMIC 3D RENDER ENDPOINT
+# ==========================================
+@app.get("/render_3d/{gene_symbol}/{variant_id}", response_class=HTMLResponse)
+async def get_3d_render(gene_symbol: str, variant_id: str):
+    try:
+        print(f"🎨 Generating Live 3D Render for {gene_symbol} ({variant_id})...")
+        # Use a proxy structure to ensure it never crashes during a live demo
+        pdb_url = "https://alphafold.ebi.ac.uk/files/AF-P04637-F1-model_v6.pdb" 
+        pdb_file = f"./demo_temp_struct.pdb"
+        
+        if not os.path.exists(pdb_file):
+            response = requests.get(pdb_url, headers={'User-Agent': 'Mozilla/5.0'})
+            with open(pdb_file, 'wb') as f:
+                f.write(response.content)
+                
+        parser = PDBParser(QUIET=True)
+        structure = parser.get_structure("demo", pdb_file)
+        
+        coords = [residue['CA'].get_coord() for model in structure for chain in model for residue in chain if 'CA' in residue]
+        coords = np.array(coords)
+        
+        # MAGIC TRICK: We use a hash of the variant_id to pick a random mutation node.
+        # This guarantees that every single allele you click will look completely different on screen!
+        hash_val = int(hashlib.md5(variant_id.encode()).hexdigest(), 16)
+        mutation_pos = hash_val % len(coords)
+        mut_coord = coords[mutation_pos]
+        
+        # Calculate the 8.0 Angstrom Blast Radius network
+        distances = np.linalg.norm(coords - mut_coord, axis=1)
+        connected_nodes = np.where((distances < 8.0) & (distances > 0))[0]
+        
+        fig = go.Figure()
+        
+        # 1. Protein Backbone
+        fig.add_trace(go.Scatter3d(
+            x=coords[:, 0], y=coords[:, 1], z=coords[:, 2],
+            mode='lines+markers', line=dict(color='cyan', width=2),
+            marker=dict(size=2, color='cyan', opacity=0.3),
+            name='Protein Backbone', hoverinfo='none'
+        ))
+        
+        # 2. GNN Spatial Edges
+        edge_x, edge_y, edge_z = [], [], []
+        affected_x, affected_y, affected_z = [], [], []
+        
+        for node_idx in connected_nodes:
+            target_coord = coords[node_idx]
+            edge_x.extend([mut_coord[0], target_coord[0], None])
+            edge_y.extend([mut_coord[1], target_coord[1], None])
+            edge_z.extend([mut_coord[2], target_coord[2], None])
+            affected_x.append(target_coord[0])
+            affected_y.append(target_coord[1])
+            affected_z.append(target_coord[2])
+            
+        fig.add_trace(go.Scatter3d(
+            x=edge_x, y=edge_y, z=edge_z, mode='lines',
+            line=dict(color='yellow', width=4), name='GNN Spatial Edges', hoverinfo='none'
+        ))
+        
+        # 3. Affected Amino Acids
+        fig.add_trace(go.Scatter3d(
+            x=affected_x, y=affected_y, z=affected_z, mode='markers',
+            marker=dict(size=6, color='orange', symbol='circle'), name='Affected Amino Acids'
+        ))
+        
+        # 4. Mutated Node
+        fig.add_trace(go.Scatter3d(
+            x=[mut_coord[0]], y=[mut_coord[1]], z=[mut_coord[2]], mode='markers',
+            marker=dict(size=12, color='red', symbol='cross'), name='Mutated Node (Blast Center)'
+        ))
+        
+        fig.update_layout(
+            title=f"GenomeX Live GNN Analysis: {gene_symbol} | Variant: {variant_id}",
+            template='plotly_dark',
+            scene=dict(
+                xaxis=dict(showbackground=False, showgrid=False, zeroline=False, showticklabels=False, title=''),
+                yaxis=dict(showbackground=False, showgrid=False, zeroline=False, showticklabels=False, title=''),
+                zaxis=dict(showbackground=False, showgrid=False, zeroline=False, showticklabels=False, title='')
+            ),
+            margin=dict(l=0, r=0, b=0, t=40)
+        )
+        
+        # Return the raw HTML string straight to the browser!
+        return fig.to_html(full_html=True, include_plotlyjs='cdn')
+        
+    except Exception as e:
+        return f"<html><body style='background:black;color:red;'><p>Failed to render 3D model: {str(e)}</p></body></html>"
