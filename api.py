@@ -58,14 +58,14 @@ pytorch_model = None
 tabular_model = None
 
 try:
-    tabular_model = joblib.load("synaptix_clinical_ai_2.pkl")
+    tabular_model = joblib.load("./models/genomex_catboost_final.pkl")
     print("✅ Tabular Model loaded successfully!")
 except Exception as e:
     print(f"⚠️ Failed to load Tabular model: {e}")
 
 try:
     pytorch_model = UltimateGenomeXHybrid().to(device)
-    pytorch_model.load_state_dict(torch.load('genomeX_hybrid_best.pth', map_location=device))
+    pytorch_model.load_state_dict(torch.load('./models/genomeX_hybrid_best.pth', map_location=device))
     pytorch_model.eval()
     print("✅ PyTorch GNN loaded successfully!")
 except Exception as e:
@@ -161,7 +161,7 @@ async def analyze_csv(file: UploadFile = File(...)):
             pytorch_prob = None
             if pytorch_model is not None and gene_symbol != "Unknown":
                 sanitized_variant = str(variant).replace(":", "_")
-                base_dir = "./demo_data"
+                base_dir = "./gnn-model-weights"
                 graph_path = f"{base_dir}/{gene_symbol}.pt"
                 emb_path = f"{base_dir}/emb_{sanitized_variant}.pt"
                 
