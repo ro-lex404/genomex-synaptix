@@ -13,6 +13,8 @@ import requests
 import pandas as pd
 import io
 import os
+import gzip
+import time # <--- Add this to your imports at the top
 
 # --- NEW IMPORTS FOR DYNAMIC GENERATION ---
 import numpy as np
@@ -165,28 +167,32 @@ async def analyze_file(file: UploadFile = File(...)):
         
     try:
         content = await file.read()
+        
+        # --- NEW: AUTOMATIC GZIP DECOMPRESSION ---
+        # Check for the gzip "magic number"
+        if content.startswith(b'\x1f\x8b'):
+            print(f"📦 Unzipping compressed file: {file.filename}")
+            content = gzip.decompress(content)
+            
         text = content.decode('utf-8')
         
-        # --- NEW: UNIVERSAL FILE PARSER (CSV or VCF) ---
+        # --- UPDATED: UNIVERSAL FILE PARSER (CSV, VCF, or VCF.GZ) ---
         variants_to_process = []
-        if file.filename.lower().endswith('.vcf'):
+        filename_lower = file.filename.lower()
+        
+        # Now triggers for both .vcf and .vcf.gz
+        if filename_lower.endswith('.vcf') or filename_lower.endswith('.vcf.gz'):
             for line in text.split('\n'):
                 if not line or line.startswith('#'): continue
                 parts = line.split('\t')
                 if len(parts) >= 5:
                     chrom, pos, var_id, ref, alt = parts[:5]
-                    # Format standardly so your existing loop understands it
                     variants_to_process.append(f"{chrom}:{pos}:{ref}:{alt}")
-                if len(variants_to_process) >= 30: # Limit to 30 to prevent UI freezing
-                    break
         else:
             df = pd.read_csv(io.StringIO(text))
             for index, row in df.iterrows():
                 variant = row.get('Variant_ID') or row.get('variant_id') or row.get('VARIANT_ID')
-                if variant: variants_to_process.append(variant)
-                if len(variants_to_process) >= 30: # Limit to 30 to prevent UI freezing
-                    break
-        
+                if variant: variants_to_process.append(variant)        
         # --- EXISTING LOOP REMAINS UNCHANGED ---
         results = []
         for variant in variants_to_process:
@@ -195,7 +201,7 @@ async def analyze_file(file: UploadFile = File(...)):
                 continue
             
             chrom, pos, ref, alt = parts
-            
+
             # Fetch tabular clues AND the Gene Symbol dynamically
             af, sift, cadd, nonsense, missense, synonymous, splice, gene_symbol = get_variant_clues(chrom, pos, alt)
             

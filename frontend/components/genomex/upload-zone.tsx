@@ -68,7 +68,7 @@ export function UploadZone({ onAnalyze }: UploadZoneProps) {
         >
           <input
             type="file"
-            accept=".vcf,.csv"
+            accept=".vcf,.csv,.vcf.gz"
             multiple
             onChange={handleFileInput}
             className="absolute inset-0 cursor-pointer opacity-0"
